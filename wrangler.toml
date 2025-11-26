@@ -1,0 +1,7 @@
+name = "mafia-bot"
+compatibility_date = "2025-11-26"
+main = "bot.js"
+
+[vars]
+TELEGRAM_TOKEN = "1027881411:AAHsqhzx4UGJEY6qOSJydLopHQw66Sxw0xg"
+NODE_ENV = "production"
