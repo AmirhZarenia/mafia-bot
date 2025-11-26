@@ -1,0 +1,8 @@
+require('dotenv').config();
+
+module.exports = {
+    telegramToken: process.env.TELEGRAM_TOKEN || 'YOUR_BOT_TOKEN_HERE',
+    mongoURI: process.env.MONGO_URI || 'mongodb://localhost:27017/mafia-game',
+    adminIds: [123456789], // ایدی عددی ادمین‌ها
+    port: process.env.PORT || 3000
+};
