@@ -38,4 +38,20 @@ bot.onText(/\/start/, async (msg) => {
     bot.sendMessage(chatId, '🤖 ربات فعال است!');
 });
 
-console.log('🤖 Mafia Bot Started with improved polling...');
+// برای Cloudflare Workers
+export default {
+    async fetch(request, env) {
+        const TelegramBot = require('node-telegram-bot-api');
+
+        // ایجاد ربات
+        const bot = new TelegramBot(env.TELEGRAM_TOKEN);
+
+        // پردازش وب‌هوک
+        if (request.method === 'POST') {
+            const update = await request.json();
+            bot.processUpdate(update);
+        }
+
+        return new Response('Bot is running!');
+    }
+}
